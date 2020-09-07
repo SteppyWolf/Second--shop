@@ -64,7 +64,7 @@ answers[2] = prompt('Сколько вам лет?', '');
 console.log(typeof(answers));
 document.write(answers);*/
 
-const category = 'toys';
+/*const category = 'toys';
 console.log(`https://someurl.com/${category}/boys/6`);
 
 const user = "Petr";
@@ -76,4 +76,24 @@ const isChecked = false,
       isClose = false;
 console.log(isChecked && isClose);
 
-console.log(2 + 2 * 2 === "8");
+console.log(2 + 2 * 2 === "8");*/
+
+const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+
+const pesonalMovieDB = {
+   count: numberOfFilms,
+   movies: {},
+   actors: {},
+   genres: [],
+   privat: false
+};
+
+const a = prompt('Один из последних просмотренных фильмов?', ''),
+      b = prompt('На сколько оцените его?',''),
+      c = prompt('Один из последних просмотренных фильмов?', ''),
+      d = prompt('На сколько оцените его?','');
+
+pesonalMovieDB.movies[a] = b;
+pesonalMovieDB.movies[c] = d;
+
+console.log(pesonalMovieDB);
