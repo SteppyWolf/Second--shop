@@ -1,0 +1,154 @@
+body{
+	background-color:#ececec;
+	font-family:'Open Sans', sans-serif;
+	font-size:14px;
+	color:#000;
+	min-width:300px;
+}
+img{
+	max-width:100%;
+	height:auto;
+}
+h3{
+	font-size:24px;
+	font-weight:700;
+}
+.cart{
+	background:#d51e08;
+	color:#fff;
+}
+.cart:hover{
+	background:#ec4835;
+}
+
+/*========================header==================================*/
+
+.dropdown-toggle{
+	width:auto;
+}
+.navbar{
+	margin-bottom:0;
+	background:#fff;
+	padding:20px 0;
+	text-transform:uppercase;
+}
+.navbar-default .navbar-nav>li>a{
+	color:#000;
+	padding-bottom:5px;
+	padding-top:5px;
+	
+}
+.navbar-default .navbar-nav>li>a:hover{
+	text-decoration:underline;
+	
+}
+.navbar-default .navbar-nav>li>a.cart{
+	color:#fff;
+	border-radius:3px;
+	padding:5px 20px;
+}
+.navbar-default .navbar-nav>li>a.cart:hover{
+    transition: backgroung 0.3s ease 0s;
+	background:#ec4835;
+	text-decoration:none;
+}
+.glyphicon-shopping-cart:before{
+	margin-right:10px;
+	font-size:17px;
+}
+.container-fluid{
+	padding-left:0;
+}
+..navbar-default .navbar-collapse, .navbar-default .navbar-form{
+	padding-left:0;
+}
+.flag{
+	margin-right:5px;
+	position:relative;
+	top:-1px;
+}
+.menu-carousel .item{
+	min-height:600px;
+}
+.menu-carousel .bgslide{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+	background-position:center center;
+}
+
+.carousel.fade{
+	opacity:1;
+}
+
+
+
+.carousel.fade 	.item.active{
+	opacity:1;
+	position:relative;
+}
+
+.carousel-caption h1{
+	font-weight:Bold;
+	font-size:48px;
+}
+
+.carousel-caption h3{
+	font-size:30px;
+	margin-bottom:40px;
+}
+
+.carousel-caption .cart{
+	padding:20px 30px;
+	border-radius:3px;
+	color:#fff;
+	text-decoration:none;
+}
+
+.carousel-caption .cart:hover{
+	background:#ec4835 !important;
+}
+
+
+/*Large Devices, Wide Screen*/
+@media only screen and(max-width: 1200px){
+
+.navbar .navbar-right{
+	float:none!important;
+}
+}
+
+/*Medium Devices, Wide Screen*/
+@media only screen and (max-width: 992px){
+	
+
+}
+/*Small Devices, Wide Screen*/
+@media only screen and (max-width: 768px){
+
+.navbar-default .navbar-nav>li>a:hover{
+	background:#eee;
+}
+
+}
+/*Small Devices, Wide Screen*/
+@media only screen and (max-width: 768px){
+	.navbar-default .navbar-nav>li>a:hover{
+	background:#eee;
+}
+
+@media only screen and (max-width: 767px){
+	.navbar-default .navbar-nav>li>a:hover{
+	background:#eee;
+}
+.container-fluid{
+	padding-left:15px;
+}
+}	
+/*Extra Small Devices, Wide Screen*/
+@media only screen and (max-width: 480px){
+	
+}
