@@ -1,6 +1,6 @@
 $(function () {
    $('.carousel').carousel({
-      interval: 3000
+      interval: 2000
    });
 
    $('.search').on('click', function () {
@@ -9,9 +9,9 @@ $(function () {
 
    $('#elastislide').elastislide();
 
-   $.Elastislide.defaults = {
+   $.elastislide.defaults = {
       speed: 600,
-      easing: 'ease-in',
+      easing: 'ease-in-out',
    };
 });
 
@@ -85,25 +85,7 @@ console.log(isChecked && isClose);
 
 console.log(2 + 2 * 2 === "8");
 
-const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
-const pesonalMovieDB = {
-   count: numberOfFilms,
-   movies: {},
-   actors: {},
-   genres: [],
-   privat: false
-};
-
-const a = prompt('Один из последних просмотренных фильмов?', ''),
-      b = prompt('На сколько оцените его?',''),
-      c = prompt('Один из последних просмотренных фильмов?', ''),
-      d = prompt('На сколько оцените его?','');
-
-pesonalMovieDB.movies[a] = b;
-pesonalMovieDB.movies[c] = d;
-
-console.log(pesonalMovieDB);
 if (4 == 9) {
    console.log('Ok!');
 } else{
@@ -121,7 +103,7 @@ if (num < 49) {
 
 (num === 50) ? console.log('Ok!') : console.log('Error');*/
 
-const num = '50';
+/*const num = '50';
 switch (num) {
    case '49':
       console.log('Error');
@@ -136,3 +118,101 @@ switch (num) {
       console.log('Not this time');
       break;
 }
+
+let num = 50;
+
+/*while (num > 55) {
+   console.log(num);
+   num++;
+}
+
+do{
+   console.log(num);
+   num++;
+}
+while(num < 55);
+
+for (let i = 1; i < 8; i++){
+   if (i === 6){
+      //break;
+      continue;
+   }
+   console.log(i);
+}
+
+const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+
+const pesonalMovieDB = {
+   count: numberOfFilms,
+   movies: {},
+   actors: {},
+   genres: [],
+   privat: false
+};
+
+for (let i = 0; i < 2; i++){
+   const a = prompt('Один из последних просмотренных фильмов?', ''),
+         b = prompt('На сколько оцените его?','');
+
+   if (a != null && b != null && a != '' && b != '' && a.length < 50){
+      pesonalMovieDB.movies[a] = b;
+      console.log('Done');
+   } else{
+      console.log('error');
+      i--;
+   }
+}
+
+if (pesonalMovieDB.count < 10){
+   console.log("Просмотрено довольно мало фильмов");
+} else if(pesonalMovieDB.count >= 10 && pesonalMovieDB.count < 30){
+   console.log("Вы классический зритель");
+} else if (pesonalMovieDB.count >= 30){
+   console.log("ВЫ киноман");
+} else{
+   console.log("Error");
+}
+
+console.log(pesonalMovieDB);
+let num = 20;
+
+function showFirstLetter (text){
+   console.log(text);
+   let num = 10;
+   console.log(num);
+}
+
+showFirstLetter("Hello World!");
+console.log(num);
+
+function calc(a, b){
+   return (a + b);
+}
+
+console.log(calc(2, 1));
+console.log(calc(5, 8));
+console.log(calc(1, 5));
+console.log(calc(2, 3));
+console.log(calc(9, 1));*/
+
+
+function ret (){
+   let num = 20;
+
+      //
+
+   return num;
+}
+
+const anotherNum = ret();
+console.log(anotherNum);
+
+const logger = function(){
+   console.log("Hello");
+};
+logger();
+
+const calc = (a,b) => { 
+   console.log('1');
+   return a + b; 
+};
