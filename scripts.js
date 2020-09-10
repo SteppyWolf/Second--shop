@@ -1,11 +1,18 @@
 $(function () {
    $('.carousel').carousel({
-      interval: false
+      interval: 3000
    });
 
    $('.search').on('click', function () {
       $('.navbar-form').slideToggle();
    });
+
+   $('#elastislide').elastislide();
+
+   $.Elastislide.defaults = {
+      speed: 600,
+      easing: 'ease-in',
+   };
 });
 
 $(window).load(function(){
@@ -28,7 +35,7 @@ $(function () {
    "use strict";
 });
 
-//alert('Please read this, before you click on button');
+/*alert('Please read this, before you click on button');
 
 let number = 3.2;
 
@@ -49,13 +56,13 @@ console.log(obj.name);
 let arr = ['apple.png', 'fruit.jpg', 2, 'table.bmp', 'Alex', {}, [],];
 console.log(arr[5]);
 
-//const result = confirm("Are you alive?");
-//console.log(result);
+const result = confirm("Are you alive?");
+console.log(result);
 
-//const answer = prompt('Do You have 18', 'Enter your age');
-//console.log(typeof(answer));
+const answer = prompt('Do You have 18', 'Enter your age');
+console.log(typeof(answer));
 
-/*const answers = [];
+const answers = [];
 
 answers[0] = prompt('Как ваша фамилия?', '');
 answers[1] = prompt('Как ваше имя?', '');
@@ -76,7 +83,7 @@ const isChecked = false,
       isClose = false;
 console.log(isChecked && isClose);
 
-console.log(2 + 2 * 2 === "8");*/
+console.log(2 + 2 * 2 === "8");
 
 const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
@@ -97,3 +104,35 @@ pesonalMovieDB.movies[a] = b;
 pesonalMovieDB.movies[c] = d;
 
 console.log(pesonalMovieDB);
+if (4 == 9) {
+   console.log('Ok!');
+} else{
+   console.log('Error!');
+}
+
+
+if (num < 49) {
+   console.log('Error');
+} else if (num > 100){
+   console.log('Too much');
+} else{
+   console.log('Ok!');
+}
+
+(num === 50) ? console.log('Ok!') : console.log('Error');*/
+
+const num = '50';
+switch (num) {
+   case '49':
+      console.log('Error');
+      break;
+   case '100':
+      console.log('Error');
+      break;
+   case '50':
+      console.log('Ok!');
+      break;
+   default:
+      console.log('Not this time');
+      break;
+}
