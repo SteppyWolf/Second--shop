@@ -9,10 +9,6 @@ $(function () {
 
    $('#elastislide').elastislide();
 
-   $.elastislide.defaults = {
-      speed: 600,
-      easing: 'ease-in-out',
-   };
 });
 
 $(window).load(function(){
@@ -140,40 +136,7 @@ for (let i = 1; i < 8; i++){
    console.log(i);
 }
 
-const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
-const pesonalMovieDB = {
-   count: numberOfFilms,
-   movies: {},
-   actors: {},
-   genres: [],
-   privat: false
-};
-
-for (let i = 0; i < 2; i++){
-   const a = prompt('Один из последних просмотренных фильмов?', ''),
-         b = prompt('На сколько оцените его?','');
-
-   if (a != null && b != null && a != '' && b != '' && a.length < 50){
-      pesonalMovieDB.movies[a] = b;
-      console.log('Done');
-   } else{
-      console.log('error');
-      i--;
-   }
-}
-
-if (pesonalMovieDB.count < 10){
-   console.log("Просмотрено довольно мало фильмов");
-} else if(pesonalMovieDB.count >= 10 && pesonalMovieDB.count < 30){
-   console.log("Вы классический зритель");
-} else if (pesonalMovieDB.count >= 30){
-   console.log("ВЫ киноман");
-} else{
-   console.log("Error");
-}
-
-console.log(pesonalMovieDB);
 let num = 20;
 
 function showFirstLetter (text){
@@ -193,7 +156,7 @@ console.log(calc(2, 1));
 console.log(calc(5, 8));
 console.log(calc(1, 5));
 console.log(calc(2, 3));
-console.log(calc(9, 1));*/
+console.log(calc(9, 1));
 
 
 function ret (){
@@ -215,4 +178,94 @@ logger();
 const calc = (a,b) => { 
    console.log('1');
    return a + b; 
+};*/
+
+const str = "Test";
+
+console.log(str[0]);
+console.log(str.toUpperCase());
+
+const fruit = "Some fruit, that want pregnant lady";
+
+console.log(fruit.indexOf("y"));
+
+const logg = "Hello mofuckers, says one guy, somewhere";
+
+console.log(logg.slice(-6, -1));
+
+const num = 12.5;
+
+console.log(Math.round(num));
+
+const test = "12.5px";
+
+console.log(parseFloat(test));
+
+
+let numberOfFilms;   
+
+function start(){
+   numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+
+   while(numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)){
+      numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+   }
+}
+
+start();
+
+
+const pesonalMovieDB = {
+   count: numberOfFilms,
+   movies: {},
+   actors: {},
+   genres: [],
+   privat: false
 };
+
+
+
+function rememberMyFilms(){
+   for (let i = 0; i < 2; i++){
+      const a = prompt('Один из последних просмотренных фильмов?', ''),
+            b = prompt('На сколько оцените его?','');
+   
+      if (a != null && b != null && a != '' && b != '' && a.length < 50){
+         pesonalMovieDB.movies[a] = b;
+         console.log('Done');
+      } else{
+         console.log('error');
+         i--;
+      }
+   }
+}
+//rememberMyFilms();
+
+
+function detectPersonalLevel(){
+
+   if (pesonalMovieDB.count < 10){
+      console.log("Просмотрено довольно мало фильмов");
+   } else if(pesonalMovieDB.count >= 10 && pesonalMovieDB.count < 30){
+      console.log("Вы классический зритель");
+   } else if (pesonalMovieDB.count >= 30){
+      console.log("ВЫ киноман");
+   } else{
+      console.log("Error");
+   }
+}
+//detectPersonalLevel();
+
+function showMyDB(hidden){
+   if (!hidden){
+      console.log(pesonalMovieDB);
+   }
+}
+showMyDB(pesonalMovieDB.privat);
+
+function writeYourGenres() {
+   for (let i = 1; i <=3; i++){
+      pesonalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);
+   }
+}
+writeYourGenres();

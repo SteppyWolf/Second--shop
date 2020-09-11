@@ -273,6 +273,11 @@ ul.catalog {
 	padding: 0;
 }
 
+.content .favorite .btn:active{
+	color: #f11313;
+	box-shadow: none;
+}
+
 .words {
 	border-top: 3px solid #dadada;
 	border-right: 3px solid #dadada;
