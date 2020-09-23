@@ -11,17 +11,17 @@ $(function () {
 
 });
 
-$(window).load(function(){
+$(window).load(function () {
    let carouselCaptionWidth = $('#carousel-sidebar .active img').width();
-   $('#carousel-sidebar img').each(function(){
+   $('#carousel-sidebar img').each(function () {
       $(this).attr('width', carouselCaptionWidth);
    });
    $('#carousel-sidebar .sidebar-carousel-caption')
-   .css('max-width', carouselCaptionWidth + 'px');
+      .css('max-width', carouselCaptionWidth + 'px');
 
    $('#sidebar-indicators .carousel-indicators')
-   .css('max-width', carouselCaptionWidth + 'px');
-   
+      .css('max-width', carouselCaptionWidth + 'px');
+
 });
 
 
@@ -202,17 +202,17 @@ const test = "12.5px";
 console.log(parseFloat(test));
 
 
-let numberOfFilms;   
+let numberOfFilms;
 
-function start(){
+function start() {
    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
-   while(numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)){
+   while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)){
       numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
    }
 }
 
-start();
+//start();
 
 
 const pesonalMovieDB = {
@@ -225,15 +225,15 @@ const pesonalMovieDB = {
 
 
 
-function rememberMyFilms(){
-   for (let i = 0; i < 2; i++){
+function rememberMyFilms() {
+   for (let i = 0; i < 2; i++) {
       const a = prompt('Один из последних просмотренных фильмов?', ''),
-            b = prompt('На сколько оцените его?','');
-   
-      if (a != null && b != null && a != '' && b != '' && a.length < 50){
+         b = prompt('На сколько оцените его?', '');
+
+      if (a != null && b != null && a != '' && b != '' && a.length < 50) {
          pesonalMovieDB.movies[a] = b;
          console.log('Done');
-      } else{
+      } else {
          console.log('error');
          i--;
       }
@@ -242,30 +242,95 @@ function rememberMyFilms(){
 //rememberMyFilms();
 
 
-function detectPersonalLevel(){
+function detectPersonalLevel() {
 
-   if (pesonalMovieDB.count < 10){
+   if (pesonalMovieDB.count < 10) {
       console.log("Просмотрено довольно мало фильмов");
-   } else if(pesonalMovieDB.count >= 10 && pesonalMovieDB.count < 30){
+   } else if (pesonalMovieDB.count >= 10 && pesonalMovieDB.count < 30) {
       console.log("Вы классический зритель");
-   } else if (pesonalMovieDB.count >= 30){
+   } else if (pesonalMovieDB.count >= 30) {
       console.log("ВЫ киноман");
-   } else{
+   } else {
       console.log("Error");
    }
 }
 //detectPersonalLevel();
 
-function showMyDB(hidden){
-   if (!hidden){
+function showMyDB(hidden) {
+   if (!hidden) {
       console.log(pesonalMovieDB);
    }
 }
-showMyDB(pesonalMovieDB.privat);
+//showMyDB(pesonalMovieDB.privat);
 
 function writeYourGenres() {
-   for (let i = 1; i <=3; i++){
+   for (let i = 1; i <= 3; i++) {
       pesonalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);
    }
 }
-writeYourGenres();
+//writeYourGenres();
+
+function first(){
+   //Do something
+   setTimeout(function(){
+      console.log(1);
+   }, 500);
+}
+
+function second(){
+   console.log(2);
+}
+
+first();
+second();
+
+function learnJS(lang, callback){
+   console.log(`Я учу: ${lang}`);
+   callback();
+}
+
+function done(){
+   console.log('Я прошел этот урок');
+}
+
+learnJS('JavaScript', done);
+
+const options = {
+   name: 'Test',
+   width: 1024,
+   height: 1024,
+   colors: {
+      border: 'black',
+      bg: 'red',
+   },
+   makeTest: function(){
+      console.log("Test");
+   }
+};
+
+options.makeTest();
+
+const{border, bg} = options.colors;
+console.log(border);
+//console.log(Object.keys(options).length);
+
+//console.log(options["colors"]["border"]);
+
+//delete options.name;
+
+//console.log(options);
+
+let counter = 0;
+
+for(let key in options){
+   if (typeof(options[key]) === 'object') {
+      for (let i in options[key]){
+         console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
+      }
+   }else{
+      console.log(`Свойство ${key} имеет значение ${options[key]}`);
+      counter++;
+   }
+}
+
+console.log(counter);

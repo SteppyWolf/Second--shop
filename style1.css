@@ -576,7 +576,7 @@ ul.catalog {
 	
 }
 
-@media only screen and(min-width: 1200px){
+@media only screen and (min-width: 1200px){
 
 	.navbar-form {
 		display: block !important;
