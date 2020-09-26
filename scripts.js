@@ -178,7 +178,7 @@ logger();
 const calc = (a,b) => { 
    console.log('1');
    return a + b; 
-};*/
+};
 
 const str = "Test";
 
@@ -199,7 +199,7 @@ console.log(Math.round(num));
 
 const test = "12.5px";
 
-console.log(parseFloat(test));
+console.log(parseFloat(test));*/
 
 
 let numberOfFilms;
@@ -311,7 +311,7 @@ const options = {
 options.makeTest();
 
 const{border, bg} = options.colors;
-console.log(border);
+console.log(border, bg);
 //console.log(Object.keys(options).length);
 
 //console.log(options["colors"]["border"]);
@@ -334,3 +334,35 @@ for(let key in options){
 }
 
 console.log(counter);
+
+const arr = [1, 2, 3, 5, 9, 10];
+arr.sort(compareNum);
+console.log(arr);
+
+function compareNum(a, b){
+   return a - b;
+}
+
+//arr[95]=7;
+//console.log(arr.length);
+//console.log(arr);
+
+//arr.forEach(function(item, i, arr){
+//   console.log(`${i}: ${item} внутри массива ${arr}`);
+//});
+
+//arr.unshift(7);
+//console.log(arr);
+
+//for (let i = 0; i < arr.length; i++){
+  // console.log(arr[i]);
+//}
+
+//for (let u of arr){
+//   console.log(u);
+//}
+
+const str = prompt("","");
+const products = str.split(", ");
+products.sort();
+console.log(products.join('; '));
