@@ -207,7 +207,7 @@ let numberOfFilms;
 function start() {
    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
-   while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)){
+   while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
       numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
    }
 }
@@ -270,26 +270,26 @@ function writeYourGenres() {
 }
 //writeYourGenres();
 
-function first(){
+function first() {
    //Do something
-   setTimeout(function(){
+   setTimeout(function () {
       console.log(1);
    }, 500);
 }
 
-function second(){
+function second() {
    console.log(2);
 }
 
 first();
 second();
 
-function learnJS(lang, callback){
+function learnJS(lang, callback) {
    console.log(`Я учу: ${lang}`);
    callback();
 }
 
-function done(){
+function done() {
    console.log('Я прошел этот урок');
 }
 
@@ -303,14 +303,17 @@ const options = {
       border: 'black',
       bg: 'red',
    },
-   makeTest: function(){
+   makeTest: function () {
       console.log("Test");
    }
 };
 
 options.makeTest();
 
-const{border, bg} = options.colors;
+const {
+   border,
+   bg
+} = options.colors;
 console.log(border, bg);
 //console.log(Object.keys(options).length);
 
@@ -322,12 +325,12 @@ console.log(border, bg);
 
 let counter = 0;
 
-for(let key in options){
-   if (typeof(options[key]) === 'object') {
-      for (let i in options[key]){
+for (let key in options) {
+   if (typeof (options[key]) === 'object') {
+      for (let i in options[key]) {
          console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
       }
-   }else{
+   } else {
       console.log(`Свойство ${key} имеет значение ${options[key]}`);
       counter++;
    }
@@ -339,7 +342,7 @@ const arr = [1, 2, 3, 5, 9, 10];
 arr.sort(compareNum);
 console.log(arr);
 
-function compareNum(a, b){
+function compareNum(a, b) {
    return a - b;
 }
 
@@ -355,14 +358,88 @@ function compareNum(a, b){
 //console.log(arr);
 
 //for (let i = 0; i < arr.length; i++){
-  // console.log(arr[i]);
+// console.log(arr[i]);
 //}
 
 //for (let u of arr){
 //   console.log(u);
 //}
 
-const str = prompt("","");
-const products = str.split(", ");
-products.sort();
-console.log(products.join('; '));
+//const str = prompt("","");
+//const products = str.split(", ");
+//products.sort();
+//console.log(products.join('; '));
+
+//let a = 5,
+//b = b + a;
+
+//console.log(b);
+//console.log(a);
+
+//const obj = {
+ //  a: 5,
+ //  b: 1
+//};
+
+//const copy = obj;
+
+//copy.a = 10;
+
+//console.log(copy);
+//console.log(obj);
+
+function copy(mainObj) {
+   let objCopy = {};
+
+   let key;
+   for (key in mainObj) {
+      objCopy[key] = mainObj[key]; 
+   }
+   
+   return objCopy;
+}
+
+const numbers = {
+   a:2,
+   b:5,
+   c:{
+      x: 7,
+      y: 4
+   }
+};
+
+const newNumbers = copy(numbers);
+
+newNumbers.a = 10;
+numbers.c.x = 10;
+
+console.log(newNumbers);
+console.log(numbers);
+
+const add = {
+   d: 17,
+   e: 20
+};
+
+console.log(Object.assign(numbers, add));
+
+const test1 =  {
+   a: 1,
+   b: 2,
+   c: {
+      x: 5,
+      y: 6
+   }
+};
+
+const test2 = {
+   d: 8,
+   e: 10
+};
+
+const clone = Object.assign({}, test2);
+
+clone.d = 21;
+
+console.log(test2);
+console.log(clone);
