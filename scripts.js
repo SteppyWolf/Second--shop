@@ -207,7 +207,7 @@ let numberOfFilms;
 function start() {
    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
-   while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+   while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)){
       numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
    }
 }
@@ -443,3 +443,38 @@ clone.d = 21;
 
 console.log(test2);
 console.log(clone);
+
+const oldArray = ['a', 'b', 'c' , 'v' , 'z', 'f', 'g'];
+const newArray = oldArray.slice(0, 4);
+
+newArray[1] = 'afasfdegrth';
+console.log(newArray);
+console.log(oldArray);
+
+const video = ['youtube', 'vimeo', 'rutube'],
+      blogs = ['wordpress', 'livejournal', 'blogger'],
+      internet = [...video, ...blogs, 'vk', 'facebook'];
+
+console.log(internet);
+
+function log(a, b, c, d){
+   console.log(a);
+   console.log(b);
+   console.log(c);
+   console.log(d);
+}
+
+const num = [2, 5, 7, 4];
+
+log(...num);
+
+const array = ["a", "b"];
+
+const newAarray = [...array];
+
+const q = {
+   one: 1,
+   two: 2
+};
+
+const newQ = {...q};
