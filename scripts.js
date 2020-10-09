@@ -199,7 +199,7 @@ console.log(Math.round(num));
 
 const test = "12.5px";
 
-console.log(parseFloat(test));*/
+console.log(parseFloat(test));
 
 
 let numberOfFilms;
@@ -477,4 +477,42 @@ const q = {
    two: 2
 };
 
-const newQ = {...q};
+const newQ = {...q};*/
+
+//To String
+
+console.log(typeof(String(3)));
+
+console.log(4 + '');
+
+const num = 5;
+
+console.log("https://vk.com/catalog/" + num);
+
+const fontsize = 26 + 'px';
+
+// To Number
+
+console.log(typeof(Number('test')));
+
+console.log(typeof(+'text')); 
+
+console.log(typeof(parseInt("10px", 10)));   
+
+let answ = +prompt("Hello", "");
+
+// To Boolean
+
+let switcher = NaN;
+if (switcher) {
+   console.log("Working...")
+}
+
+switcher = 15;
+if (switcher) {
+   console.log("Working...")
+}
+
+console.log(typeof(Boolean('4')));
+
+console.log(typeof(!!'43535'));
