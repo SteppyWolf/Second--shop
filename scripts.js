@@ -555,3 +555,23 @@ console.log(+"Infinity");
 console.log("Ежик" > "яблоко"); //Смотреть таблицу Unicode
 
 console.log(0 || "" || 2 || undefined || true || false);
+
+//                     DOM
+
+const box = document.getElementById('box');
+console.log(box);
+
+const buttons = document.getElementsByTagName('button')[1];
+console.log(buttons);
+
+const circles = document.getElementsByClassName('circle');
+console.log(circles);
+
+const hearts = document.querySelectorAll('.heart');
+
+hearts.forEach(item => {
+    console.log(item);
+});
+
+const oneItem = document.querySelector('.lists');
+console.log(oneItem);
