@@ -477,7 +477,7 @@ const q = {
    two: 2
 };
 
-const newQ = {...q};*/
+const newQ = {...q};
 
 //To String
 
@@ -505,14 +505,53 @@ let answ = +prompt("Hello", "");
 
 let switcher = NaN;
 if (switcher) {
-   console.log("Working...")
+   console.log("Working...");
 }
 
 switcher = 15;
 if (switcher) {
-   console.log("Working...")
+   console.log("Working...");
 }
 
 console.log(typeof(Boolean('4')));
 
-console.log(typeof(!!'43535'));
+console.log(typeof(!!'43535'));*/
+
+let x = 5;
+
+console.log(++x);
+
+let y = x;
+
+console.log(y);
+
+console.log([] + false - null + false); 
+
+let a = 1; 
+let b = (a) = 2; 
+console.log(b); 
+
+console.log(typeof([] + 1 + 2));  //"1 + 2" => "12"  string
+
+console.log("1"[0]);
+
+console.log(2 && 1 && null && 0 && undefined);// Выведет null
+//Оператор И(&&) запинается на лжи
+
+console.log(!!(1 && 2) === (1 && 2));
+
+let g = 1 && 5;
+console.log(typeof(g)); 
+
+console.log(null || 2 && 3 || 4); //Выведет 3
+//А оператор ИЛИ (||) запинается на правде !!!
+
+const q = [1, 2, 3];
+const w = [1, 2, 3];
+console.log(q == w);
+
+console.log(+"Infinity");
+
+console.log("Ежик" > "яблоко"); //Смотреть таблицу Unicode
+
+console.log(0 || "" || 2 || undefined || true || false);
