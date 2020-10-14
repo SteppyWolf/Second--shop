@@ -558,20 +558,53 @@ console.log(0 || "" || 2 || undefined || true || false);
 
 //                     DOM
 
-const box = document.getElementById('box');
-console.log(box);
+const box = document.getElementById('box'),
+    buttons = document.getElementsByTagName('button'),
+    circles = document.getElementsByClassName('circle'),
+    hearts = document.querySelectorAll('.heart'),
+    oneItem = document.querySelector('.lists'),
+    wrapper = document.querySelector('.wrapper');
 
-const buttons = document.getElementsByTagName('button')[1];
-console.log(buttons);
+// $('.box') in jQuery
 
-const circles = document.getElementsByClassName('circle');
-console.log(circles);
+    hearts.forEach(item => {
+        console.log(item);
+    });
 
-const hearts = document.querySelectorAll('.heart');
+    //box.style.backgroundColor = 'green';
+    //box.style.width = '500px';
+
+    //box.style.cssText = `background-color: black; width: ${num}`;
+
+    buttons[1].style.borderRadius = '100%';
+/*circles.style.backgroundColor = 'red';
+
+for (let i = 0; i < hearts.length; i++){
+    hearts[i].style.backgroundColor = 'green';
+}*/
 
 hearts.forEach(item => {
-    console.log(item);
+    item.style.backgroundColor = 'green';
 });
 
-const oneItem = document.querySelector('.lists');
-console.log(oneItem);
+const div = document.createElement('div');
+//const text = document.createTextNode('Тут был я');
+
+div.classList.add('black');
+wrapper.append(div);
+
+//wrapper.appendChild(div);
+//wrapper.prepend(div);
+//wrapper.insertBefore(div, hearts[1]);          Old Version
+//hearts[0].before(div);
+//hearts[0].after(div);
+//circles[0].remove();
+//wrapper.removeChild(hearts[1]);                  Old Version
+//hearts[0].replaceWith(circles[0]);
+//wrapper.replaceChild(circles[0], hearts[0]);     Old Version
+
+div.innerHTML = "<h1>Hello World</h1>";
+
+//div.textContent = "Hello";
+
+div.insertAdjacentHTML('beforebegin', "<h2>Hello</h2>");    
