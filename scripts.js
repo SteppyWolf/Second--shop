@@ -1,6 +1,6 @@
 $(function () {
    $('.carousel').carousel({
-      interval: 2000
+      interval: 3000
    });
 
    $('.search').on('click', function () {
@@ -556,7 +556,11 @@ console.log("Ежик" > "яблоко"); //Смотреть таблицу Unic
 
 console.log(0 || "" || 2 || undefined || true || false);
 
+
+
+
 //                     DOM
+
 
 const box = document.getElementById('box'),
     buttons = document.getElementsByTagName('button'),
@@ -608,3 +612,112 @@ div.innerHTML = "<h1>Hello World</h1>";
 //div.textContent = "Hello";
 
 div.insertAdjacentHTML('beforebegin', "<h2>Hello</h2>");    
+
+
+const movieDB = {
+   movies: [
+       "Логан",
+       "Лига справедливости",
+       "Ла-ла лэнд",
+       "Одержимость",
+       "Скотт Пилигрим против..."
+   ]
+};
+
+const promo = document.querySelectorAll('.promo__adv img'),
+   poster = document.querySelector('.promo__bg'),
+   genre = poster.querySelector('.promo__genre'),
+   movieList = document.querySelector('.promo__interactive-list'),
+   byid = movieList.querySelector('#logan'),
+   list = movieList.querySelector('li'),
+   del = document.querySelector('.promo__interactive-item .delete'),
+   delet = del.querySelectorAll('.delete');
+   
+//promo.forEach(item =>{
+//    item.remove();
+//});
+
+promo.forEach(function (item) {
+   item.remove();
+});
+
+//promo[0].remove();
+//promo[1].remove();
+//promo[2].remove();
+
+genre.textContent = 'ДРАМА';
+poster.style.backgroundImage = "url('img/bg.jpg')";
+
+movieList.innerHTML = '';
+movieDB.movies.sort();
+movieDB.movies.forEach((film, i) => {
+   movieList.innerHTML += `
+   <li class="promo__interactive-item">${i + 1} ${film}
+     <div class="delete"></div>
+   </li>
+   `;
+});
+
+$('.delete').on('click', function () {
+   $('#logan').remove();
+});
+
+//$('.delete').on('click', function () {
+//    $('li').remove();
+//});
+
+
+const btn = document.querySelector('button'),
+      overlay = document.querySelector('.overlay');
+
+//btn.onclick = function(){
+//    alert('Working');
+//};
+
+//btn.addEventListener('click', (e) =>{
+//    //console.log(e.target);
+//    e.target.remove();
+//});
+
+//let i = 0;
+const deleteElement = (e) =>{
+   console.log(e.currentTarget);
+   console.log(e.type);
+  // i++;
+  // if(i == 1) {
+  //  btn.removeEventListener('click', deleteElement);
+  // }
+};
+btn.addEventListener('click', deleteElement);
+overlay.addEventListener('click', deleteElement);
+
+const link = document.querySelector('a');
+
+link.addEventListener('click', function (event){
+    event.preventDefault();
+
+    console.log(event.target);
+});
+
+const parent = document.querySelectorAll('.test'),
+      li1 = document.querySelector('#first'),
+      li2 = document.querySelector('#second'),
+      li3 = document.querySelector('#third'),
+      del1 = document.querySelector('.delete1'),
+      del2 = document.querySelector('.delete2'),
+      del3 = document.querySelector('.delete3');
+
+const delEl1 = function (){
+    li1.remove();
+};
+del1.addEventListener('click', delEl1);
+
+const delEl2 = function (){
+    li2.remove();
+};
+del2.addEventListener('click', delEl2);
+
+const delEl3 = function (){
+    li3.remove();
+};
+del3.addEventListener('click', delEl3);
