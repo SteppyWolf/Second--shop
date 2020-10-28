@@ -613,7 +613,7 @@ div.innerHTML = "<h1>Hello World</h1>";
 
 div.insertAdjacentHTML('beforebegin', "<h2>Hello</h2>");    
 
-
+//document.addEventListener('DOMContentLoaded', () => {}
 const movieDB = {
    movies: [
        "Логан",
@@ -637,70 +637,75 @@ const promo = document.querySelectorAll('.promo__adv img'),
 //    item.remove();
 //});
 
-promo.forEach(function (item) {
-   item.remove();
+addForm.addEventListener('submit', (event) => {
+   event.preventDefault();
+
+   let newFilm = addInput.value;
+   const favorite = checkbox.checked;
+
+   if (newFilm){
+
+       if (newFilm.length > 21){
+           newFilm = `${newFilm.substring(0, 22)}...`;
+       }
+
+       if (favorite) {
+           console.log("Добавляем любимый фильм");
+       }
+
+       movieDB.movies.push(newFilm);
+       sortArr(movieDB.movies);    
+       createMovieList(movieDB.movies, movieList);
+   }
+   event.target.reset();
 });
 
-//promo[0].remove();
-//promo[1].remove();
-//promo[2].remove();
 
-genre.textContent = 'ДРАМА';
-poster.style.backgroundImage = "url('img/bg.jpg')";
-
-movieList.innerHTML = '';
-movieDB.movies.sort();
-movieDB.movies.forEach((film, i) => {
-   movieList.innerHTML += `
-   <li class="promo__interactive-item">${i + 1} ${film}
-     <div class="delete"></div>
-   </li>
-   `;
-});
-
-$('.delete').on('click', function () {
-   $('#logan').remove();
-});
-
-//$('.delete').on('click', function () {
-//    $('li').remove();
+//promo.forEach(item =>{
+//    item.remove();
 //});
 
-
-const btn = document.querySelector('button'),
-      overlay = document.querySelector('.overlay');
-
-//btn.onclick = function(){
-//    alert('Working');
-//};
-
-//btn.addEventListener('click', (e) =>{
-//    //console.log(e.target);
-//    e.target.remove();
-//});
-
-//let i = 0;
-const deleteElement = (e) =>{
-   console.log(e.currentTarget);
-   console.log(e.type);
-  // i++;
-  // if(i == 1) {
-  //  btn.removeEventListener('click', deleteElement);
-  // }
+const deleteAdv = (arr) =>{
+   arr.forEach(function (item) {
+       item.remove();
+   });
 };
-btn.addEventListener('click', deleteElement);
-overlay.addEventListener('click', deleteElement);
 
-const link = document.querySelector('a');
+const makeChanges = () =>{
+   genre.textContent = 'ДРАМА';
+   poster.style.backgroundImage = "url('img/bg.jpg')";
+};
 
-link.addEventListener('click', function (event){
-    event.preventDefault();
+const sortArr = (arr) =>{
+   arr.sort();
+}; 
 
-    console.log(event.target);
-});
+function createMovieList(films, parent){
+   parent.innerHTML = '';
+   sortArr(films);
 
-const parent = document.querySelectorAll('.test'),
-      li1 = document.querySelector('#first'),
+   films.forEach((film, i) => {
+       parent.innerHTML += `
+       <li class="promo__interactive-item">${i + 1} ${film}
+         <div class="delete"></div>
+       </li>
+       `;
+   });
+
+   document.querySelectorAll('.delete').forEach((btn, i) =>{
+       btn.addEventListener('click', () =>{
+           btn.parentElement.remove();
+           movieDB.movies.splice(i, 1);
+           createMovieList(films, parent);
+       });
+   });
+}
+
+deleteAdv(promo);
+makeChanges();
+createMovieList(movieDB.movies, movieList);
+
+const li1 = document.querySelector('#first'),
       li2 = document.querySelector('#second'),
       li3 = document.querySelector('#third'),
       del1 = document.querySelector('.delete1'),
@@ -721,3 +726,22 @@ const delEl3 = function (){
     li3.remove();
 };
 del3.addEventListener('click', delEl3);
+
+//console.log(document.head);
+//console.log(document.documentElement);
+//console.log(document.body.childNodes);
+//console.log(document.body.firstChild);
+//console.log(document.body.lastChild);
+
+//console.log(document.querySelector('#current').parentNode.parentNode);
+
+//console.log(document.querySelector('[data-current = "3"]').nextSibling); 
+//previousSibling
+//console.log(document.querySelector('[data-current = "3"]').previousElementSibling);
+
+for(let node of document.body.childNodes){
+   if (node.nodeName == '#text') {
+       continue;
+   }
+   console.log(node);
+}
