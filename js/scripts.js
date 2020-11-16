@@ -786,3 +786,150 @@ btn.addEventListener('click', myAnimation);
 //    alert('Working');
 //    id = setTimeout(log, 500);
 //}, 500);
+
+const now = new Date();
+//new Date.parse('2020-05-01');
+
+now.setHours(18);
+console.log(now);
+
+//console.log(now.getFullYear());
+//console.log(now.getMonth());
+//console.log(now.getDate()); //hours, minutes and...
+//console.log(now.getHours());
+//console.log(now.getUTCHours());
+
+//console.log(now.getTimezoneOffset());
+//console.log(now.getTime());
+
+let start = new Date();
+
+for (let i = 0; i < 100000; i++){
+    let some = i ** 3;
+}
+
+let end = new Date();
+
+alert(`Цикл отработал ${end - start} миллисекуд`);
+
+const boxWindow = document.querySelector('.box');
+
+//const width = box.clientWidth;
+//const height = box.clientHeight;
+//const width = box.offsetWidth;
+//const height = box.offsetHeight;
+const width = box.scrollWidth;
+const height = box.scrollHeight;
+
+console.log(width, height);
+
+btn1.addEventListener('click', () =>{
+   box.style.height = box.scrollHeight + 'px';
+});
+
+console.log(box.getBoundingClientRect());
+
+const style = window.getComputedStyle(box);
+
+console.log(style.display);
+
+//console.log(window.scrollTo , scrollBy(x,y))
+
+
+//    Фнукции-конструкторы, конекст вызова this
+
+/*
+function User (name, id) {
+   this.name = name;
+   this.id = id;
+   this.human = true;
+   this.hello = function (){
+      console.log(`Hello ${this.name}`);
+   };
+}
+
+User.prototype.exit = function (){
+   console.log(`Пользователь ${this.name} ушел`);
+};
+
+const ruslan = new User('Ruslan', 22);
+const unknow = new User('Unknow', 99);
+
+ruslan.exit();
+unknow.exit();
+
+console.log(ruslan);
+console.log(unknow);
+
+function showThis (){
+   console.log(this);
+   function sum(){
+      console.log(this);
+      return a + b;
+   }
+   console.log(sum());
+}
+showThis();
+
+const obj = {
+   c: 20,
+   d: 15,
+   sum: function(){
+      console.log(this);
+      //Если здесь будет функция, то конекст потеряется - undefined
+   }
+};
+obj.sum();
+
+function User (name, id) {
+   this.name = name;
+   this.id = id;
+   this.human = true;
+   this.hello = function (){
+      console.log(`Hello ${this.name}`);
+   };
+}
+let ivan = new User ('Ivan', 23);
+
+
+function sayName (){
+   console.log(this);
+   console.log(this.name);
+}
+
+const user = {
+   name: 'Jhon'
+};
+
+function count(num){
+   return this*num;
+}
+const double = count.bind(2); //Частый метод
+console.log(double(2));
+console.log(double(13));
+*/
+
+//1) Обычная функция: this = window; use strict = undefined
+//2) Контекст у методов объекта это будет сам объект
+//3) this в конструкторах и классах - новый экземпляр объекта!!!!
+//4) Ручная привязка this с call, apply, bind
+
+//const btn = document.querySelector('button');
+
+//btn.addEventListener('click', function(){
+//   this.style.backgroundColor = 'red';
+//});   И будет работать
+
+const obj = {
+   a: 20,
+   sayNumber: function(){
+      const say = (e) =>{
+         console.log(this.a);
+      };
+      say(10);
+   }
+};
+
+const double = a => a * 2; //return добавляется автоматом
+//Заменяет {return a * 2}
+console.log(double(4));
