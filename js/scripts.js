@@ -933,3 +933,37 @@ const obj = {
 const double = a => a * 2; //return добавляется автоматом
 //Заменяет {return a * 2}
 console.log(double(4));
+
+//     Classes ES6
+
+class Rectange {
+   constructor (height, width){
+      this.height = height;
+      this.width = width;
+   }
+
+   calcArea(){
+      return this.height * this.width;
+   }
+}
+
+class ColoredRectangleWithText extends Rectange{
+   constructor(height, width, text, bgColor){
+      super(height, width);
+      this.text = text;
+      this.bgColor = bgColor;
+   }
+
+   showMyProps(){
+      console.log(`Текст: ${this.text}, Цвет: ${this.bgColor}`);
+   }
+}
+
+const div1 = new ColoredRectangleWithText(25, 10, 'Hello World', 'red');
+div1.showMyProps();
+console.log(div1.calcArea());
+
+//const square = new Rectange(10, 10);
+//const long = new Rectange(20, 100);
+//console.log(square.calcArea());
+//console.log(long.calcArea());
